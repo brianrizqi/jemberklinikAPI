@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1c033471-354a-4ded-8ddb-f12534a7f10d" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-422">
+              <caret line="332" column="20" lean-forward="true" selection-start-line="332" selection-start-column="20" selection-end-line="332" selection-end-column="20" />
+              <folding>
+                <element signature="e#7#63#0#PHP" expanded="true" />
+                <element signature="e#484#2447#1#PHP" />
+                <element signature="e#2471#3313#1#PHP" />
+                <element signature="e#3341#4109#1#PHP" />
+                <element signature="e#4137#5184#1#PHP" />
+                <element signature="e#5213#5647#1#PHP" />
+                <element signature="e#5677#6121#1#PHP" />
+                <element signature="e#6149#6508#1#PHP" />
+                <element signature="e#6541#7343#1#PHP" />
+                <element signature="e#7376#8429#1#PHP" />
+                <element signature="e#8453#9612#1#PHP" />
+                <element signature="e#9640#10639#1#PHP" />
+                <element signature="e#11285#11647#1#PHP" />
+                <element signature="e#11673#12026#1#PHP" />
+                <element signature="e#12052#12608#1#PHP" />
+                <element signature="n#haveEmptyParameters#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/Analisa.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="516">
+              <caret line="73" column="34" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/Pemesanan.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-316">
+              <caret line="99" column="20" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
+              <folding>
+                <element signature="n#getAntrianSelesai#0;n#Pemesanan#0;n#!!top" />
+                <element signature="n#getAntrian#0;n#Pemesanan#0;n#!!top" />
+                <element signature="n#getNomor#0;n#Pemesanan#0;n#!!top" />
+                <element signature="n#kuota#0;n#Pemesanan#0;n#!!top" />
+                <element signature="n#editKuota#0;n#Pemesanan#0;n#!!top" />
+                <element signature="n#createPemesanan#0;n#Pemesanan#0;n#!!top" />
+                <element signature="n#getPemesanan#0;n#Pemesanan#0;n#!!top" />
+                <element signature="n#getPemesananById#0;n#Pemesanan#0;n#!!top" />
+                <element signature="n#verif#0;n#Pemesanan#0;n#!!top" />
+                <element signature="n#cekVerif#0;n#Pemesanan#0;n#!!top" />
+                <element signature="n#isDateExists#0;n#Pemesanan#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/Penyakit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="516">
+              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getnomo</find>
+      <find>getnom</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/includes/init.php" />
+        <option value="$PROJECT_DIR$/includes/Constant.php" />
+        <option value="$PROJECT_DIR$/includes/Users.php" />
+        <option value="$PROJECT_DIR$/includes/Penyakit.php" />
+        <option value="$PROJECT_DIR$/includes/Analisa.php" />
+        <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/includes/Pemesanan.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/container-interop/container-interop" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/nikic/fast-route" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/slim/slim" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/slim/php-view" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="676" />
+    <option name="width" value="697" />
+    <option name="height" value="775" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="jember_klinik" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jember_klinik" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jember_klinik" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jember_klinik" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jember_klinik" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jember_klinik" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jember_klinik" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jember_klinik" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="eu.ydp.idea.ts.spec.generator.settings.spec.template" value="import {$ClassName$} from '$TestsRelativePath$../src/$classRelativePath$/$ClassName$';&#10;&#10;describe('$ClassName$', () =&gt; {&#10;  let $ObjName$:$ClassName$;&#10;&#10;  beforeEach(() =&gt; {&#10;    $ObjName$ = new $ClassName$();&#10;  });&#10;&#10;  describe('', () =&gt; {&#10;    it('', () =&gt; {&#10;      // given&#10;&#10;      // when&#10;&#10;      // then&#10;    });&#10;  });&#10;});&#10;" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sppk" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1c033471-354a-4ded-8ddb-f12534a7f10d" name="Default Changelist" comment="" />
+      <created>1549282138218</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1549282138218</updated>
+      <workItem from="1549282139886" duration="5026000" />
+      <workItem from="1549328876396" duration="4993000" />
+      <workItem from="1549417781823" duration="22000" />
+      <workItem from="1549613933883" duration="3534000" />
+      <workItem from="1549790800786" duration="116000" />
+      <workItem from="1550107771352" duration="2881000" />
+      <workItem from="1550115627521" duration="4200000" />
+      <workItem from="1550149676378" duration="16000" />
+      <workItem from="1550160867158" duration="1709000" />
+      <workItem from="1550195149915" duration="6070000" />
+      <workItem from="1550215769818" duration="1827000" />
+      <workItem from="1550286230152" duration="1385000" />
+      <workItem from="1550394944793" duration="825000" />
+      <workItem from="1550399781438" duration="3123000" />
+      <workItem from="1550456037191" duration="46000" />
+      <workItem from="1550470633404" duration="28000" />
+      <workItem from="1550760426728" duration="1067000" />
+      <workItem from="1550983612479" duration="66000" />
+      <workItem from="1552264517668" duration="12187000" />
+      <workItem from="1552444645313" duration="2992000" />
+      <workItem from="1552523707927" duration="684000" />
+      <workItem from="1553824952917" duration="260000" />
+      <workItem from="1557908531821" duration="4315000" />
+      <workItem from="1557968499462" duration="5418000" />
+      <workItem from="1557981007493" duration="604000" />
+      <workItem from="1557981649017" duration="48000" />
+      <workItem from="1557981838059" duration="3770000" />
+      <workItem from="1558069590464" duration="4603000" />
+      <workItem from="1558148232878" duration="3502000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="75317000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27912253" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/password/password.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="175" column="9" selection-start-line="175" selection-start-column="9" selection-end-line="175" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/middleware.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/.htaccess">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/Users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-323">
+          <caret line="82" column="8" lean-forward="true" selection-start-line="82" selection-start-column="8" selection-end-line="101" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/Penyakit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/Constant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/Pemesanan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-316">
+          <caret line="99" column="20" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
+          <folding>
+            <element signature="n#getAntrianSelesai#0;n#Pemesanan#0;n#!!top" />
+            <element signature="n#getAntrian#0;n#Pemesanan#0;n#!!top" />
+            <element signature="n#getNomor#0;n#Pemesanan#0;n#!!top" />
+            <element signature="n#kuota#0;n#Pemesanan#0;n#!!top" />
+            <element signature="n#editKuota#0;n#Pemesanan#0;n#!!top" />
+            <element signature="n#createPemesanan#0;n#Pemesanan#0;n#!!top" />
+            <element signature="n#getPemesanan#0;n#Pemesanan#0;n#!!top" />
+            <element signature="n#getPemesananById#0;n#Pemesanan#0;n#!!top" />
+            <element signature="n#verif#0;n#Pemesanan#0;n#!!top" />
+            <element signature="n#cekVerif#0;n#Pemesanan#0;n#!!top" />
+            <element signature="n#isDateExists#0;n#Pemesanan#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/Analisa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="73" column="34" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-422">
+          <caret line="332" column="20" lean-forward="true" selection-start-line="332" selection-start-column="20" selection-end-line="332" selection-end-column="20" />
+          <folding>
+            <element signature="e#7#63#0#PHP" expanded="true" />
+            <element signature="e#484#2447#1#PHP" />
+            <element signature="e#2471#3313#1#PHP" />
+            <element signature="e#3341#4109#1#PHP" />
+            <element signature="e#4137#5184#1#PHP" />
+            <element signature="e#5213#5647#1#PHP" />
+            <element signature="e#5677#6121#1#PHP" />
+            <element signature="e#6149#6508#1#PHP" />
+            <element signature="e#6541#7343#1#PHP" />
+            <element signature="e#7376#8429#1#PHP" />
+            <element signature="e#8453#9612#1#PHP" />
+            <element signature="e#9640#10639#1#PHP" />
+            <element signature="e#11285#11647#1#PHP" />
+            <element signature="e#11673#12026#1#PHP" />
+            <element signature="e#12052#12608#1#PHP" />
+            <element signature="n#haveEmptyParameters#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
