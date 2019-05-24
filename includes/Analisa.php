@@ -11,67 +11,59 @@ class Analisa
         $this->con = $db->connect();
     }
 
-    public function hitung($keluhan, $kriteria)
+    public function hitung()
     {
-        if ($kriteria == 'C1') {
-            $nilai_max = 1;
-        } else if ($kriteria == 'C2') {
-            $nilai_max = 0.75;
-        } else if ($kriteria == 'C3') {
-            $nilai_max = 1;
-        } else {
-            $nilai_max = 1;
+        $tanggal = date("Y-m-d");
+        $stmt = $this->con->prepare("SELECT `id_pemesanan`, `id_user`, `id_penyakit`,`umur`,`created_at` FROM `pemesanan` 
+ where pemesanan.tanggal = '$tanggal'");
+        $stmt->execute();
+        $stmt->bind_result($id_pemesanan, $id_user, $id_penyakit, $umur, $created_at);
+        $pesan = array();
+        while ($stmt->fetch()) {
+            $pemesanan = array();
+            $pemesanan['id_pemesanan'] = $id_pemesanan;
+            $pemesanan['id_user'] = $id_user;
+            $pemesanan['id_penyakit'] = $id_penyakit;
+            $pemesanan['umur'] = $umur;
+            array_push($pesan, $pemesanan);
         }
-        if (($keluhan == 'A1' && $kriteria == 'C1') ||
-            ($keluhan == 'A2' && $kriteria == 'C1') ||
-            ($keluhan == 'A3' && $kriteria == 'C1') ||
-            ($keluhan == 'A8' && $kriteria == 'C1') ||
-            ($keluhan == 'A9' && $kriteria == 'C1') ||
-            ($keluhan == 'A10' && $kriteria == 'C1') ||
-            ($keluhan == 'A11' && $kriteria == 'C1') ||
-            ($keluhan == 'A7' && $kriteria == 'C3') ||
-            ($keluhan == 'A4' && $kriteria == 'C4') ||
-            ($keluhan == 'A5' && $kriteria == 'C4') ||
-            ($keluhan == 'A6' && $kriteria == 'C4')
-        ) {
-            $nilai = 1;
-        } else if (
-            ($keluhan == 'A4' && $kriteria == 'C1') ||
-            ($keluhan == 'A6' && $kriteria == 'C1') ||
-            ($keluhan == 'A7' && $kriteria == 'C1') ||
-            ($keluhan == 'A10' && $kriteria == 'C3') ||
-            ($keluhan == 'A7' && $kriteria == 'C4') ||
-            ($keluhan == 'A9' && $kriteria == 'C4') ||
-            ($keluhan == 'A11' && $kriteria == 'C4')
-        ) {
-            $nilai = 0;
-        } else if (
-            ($keluhan == 'A1' && $kriteria == 'C2') ||
-            ($keluhan == 'A3' && $kriteria == 'C4') ||
-            ($keluhan == 'A5' && $kriteria == 'C2') ||
-            ($keluhan == 'A6' && $kriteria == 'C2') ||
-            ($keluhan == 'A8' && $kriteria == 'C3') ||
-            ($keluhan == 'A9' && $kriteria == 'C2') ||
-            ($keluhan == 'A9' && $kriteria == 'C3') ||
-            ($keluhan == 'A11' && $kriteria == 'C3')
-        ) {
-            $nilai = 0.5;
-        } else if (
-            ($keluhan == 'A1' && $kriteria == 'C4') ||
-            ($keluhan == 'A2' && $kriteria == 'C4') ||
-            ($keluhan == 'A4' && $kriteria == 'C3') ||
-            ($keluhan == 'A5' && $kriteria == 'C3') ||
-            ($keluhan == 'A6' && $kriteria == 'C3') ||
-            ($keluhan == 'A7' && $kriteria == 'C2') ||
-            ($keluhan == 'A8' && $kriteria == 'C4') ||
-            ($keluhan == 'A10' && $kriteria == 'C4') ||
-            ($keluhan == 'A11' && $kriteria == 'C2')
-        ) {
-            $nilai = 0.75;
-        } else {
-            $nilai = 0.25;
+        $hasil = array();
+        $stmt->close();
+        foreach ($pesan as $item) {
+            $analisa = array();
+            $bobotUmur = 0;
+            if ($item['umur'] > 0 && $item['umur'] <= 11) {
+                $bobotUmur = 1;
+            } else if ($item['umur'] > 11 && $item['umur'] <= 25) {
+                $bobotUmur = 0.5;
+            } else if ($item['umur'] > 25 && $item['umur'] <= 45) {
+                $bobotUmur = 0.25;
+            } else if ($item['umur'] > 45) {
+                $bobotUmur = 0.75;
+            }
+            $sql = $this->con->query("select bobot from penyakit where id_penyakit = '" . $item['id_penyakit'] . "'");
+            while ($row = $sql->fetch_assoc()) {
+                $bobotPenyakit = $row;
+            }
+            $analisa["boborPenyakit"] = $bobotPenyakit['bobot'];
+            $analisa['id_pemesanan'] = $item['id_pemesanan'];
+            $analisa["bobotUmur"] = $bobotUmur;
+            $analisa['normalisasi'] = ($bobotUmur * 0.4) + ($bobotPenyakit['bobot'] * 0.6);
+            array_push($hasil, $analisa);
         }
-        return $nilai / $nilai_max;
+        usort($hasil, function ($a, $b) {
+            if ($a['normalisasi'] == $b['normalisasi']) return 0;
+            return $a['normalisasi'] < $b['normalisasi'] ? 1 : -1;
+        });
+        $i = 1;
+        foreach ($hasil as $item) {
+            $stmt = $this->con->prepare("UPDATE `pemesanan` SET `nomor`= ? WHERE id_pemesanan = ?");
+            $stmt->bind_param('ii', $i, $item['id_pemesanan']);
+            if ($stmt->execute()) {
+                $i++;
+            }
+        }
+        return "Perhitungan Telah Berhasil";
     }
 }
 

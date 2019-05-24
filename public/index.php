@@ -378,23 +378,18 @@ $app->get('/getBobot', function (Request $request, Response $response) {
     $response->write(json_encode($message));
     return $response;
 });
-$app->post('/analisa', function (Request $request, Response $response) {
-    if (!haveEmptyParameters(array('id_penyakit', 'kriteria'), $request, $response)) {
-        $request_data = $request->getParsedBody();
+$app->get('/analisa', function (Request $request, Response $response) {
+    $request_data = $request->getParsedBody();
 
-        $id_penyakit = $request_data['id_penyakit'];
-        $kriteria = $request_data['kriteria'];
+    $db = new Analisa();
 
-        $db = new Analisa();
+    $result = $db->hitung();
 
-        $result = $db->hitung($id_penyakit, $kriteria);
+    $message = array();
+    $message['error'] = false;
+    $message['hasil'] = $result;
 
-        $message = array();
-        $message['error'] = false;
-        $message['nilai'] = $result;
-
-        $response->write(json_encode($message));
-    }
+    $response->write(json_encode($message));
     return $response;
 });
 $app->get('/cekNomor', function (Request $request, Response $response) {
