@@ -387,7 +387,7 @@ $app->get('/analisa', function (Request $request, Response $response) {
 
     $message = array();
     $message['error'] = false;
-    $message['hasil'] = $result;
+    $message['message'] = $result;
 
     $response->write(json_encode($message));
     return $response;

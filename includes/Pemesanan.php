@@ -150,7 +150,7 @@ WHERE tanggal = ?");
     {
         $tanggal = date("Y-m-d");
         $stmt = $this->con->prepare("SELECT `id_pemesanan`, pemesanan.`id_user`, `keluhan`,
- `status`,pemesanan.`created_at` ,users.`nama`,users.`jenis_kelamin`,pemesanan.`nomor` FROM `pemesanan` 
+ `status`,pemesanan.`created_at` ,pemesanan.`nama`,users.`jenis_kelamin`,pemesanan.`nomor` FROM `pemesanan` 
  join users on users.id_user = pemesanan.id_user join penyakit p on pemesanan.id_penyakit = p.id_penyakit
  where pemesanan.tanggal = '$tanggal'");
         $stmt->execute();
@@ -169,6 +169,9 @@ WHERE tanggal = ?");
             $pemesanan['nomor'] = $nomor;
             array_push($pesan, $pemesanan);
         }
+        usort($pesan, function($a, $b) {
+            return $a['nomor'] <=> $b['nomor'];
+        });
         return $pesan;
     }
 
