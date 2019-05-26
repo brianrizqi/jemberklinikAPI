@@ -392,7 +392,8 @@ $app->get('/cekNomor', function (Request $request, Response $response) {
     }
 
     $response->write(json_encode($message));
-    return $response;
+    return $response->withHeader('Content-type', 'application/json')
+        ->withStatus(200);
 });
 
 function haveEmptyParameters($required_params, $request, $response)
