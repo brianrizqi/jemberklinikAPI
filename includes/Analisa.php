@@ -45,16 +45,12 @@ class Analisa
             while ($row = $sql->fetch_assoc()) {
                 $bobotPenyakit = $row;
             }
-            $analisa["boborPenyakit"] = $bobotPenyakit['bobot'];
+            $analisa["bobotPenyakit"] = round(round($bobotPenyakit['bobot'], 1) * 0.6, 2);
             $analisa['id_pemesanan'] = $item['id_pemesanan'];
-            $analisa["bobotUmur"] = $bobotUmur;
-            $analisa['normalisasi'] = ($bobotUmur * 0.4) + ($bobotPenyakit['bobot'] * 0.6);
+            $analisa["bobotUmur"] = round(round($bobotUmur, 1) * 0.4, 1);
+            $analisa['normalisasi'] = round((round($bobotUmur, 1) * 0.4) + (round(round($bobotPenyakit['bobot'], 1) * 0.6, 2)), 2);
             array_push($hasil, $analisa);
         }
-        usort($hasil, function ($a, $b) {
-            if ($a['normalisasi'] == $b['normalisasi']) return 0;
-            return $a['normalisasi'] < $b['normalisasi'] ? 1 : -1;
-        });
         $i = 1;
         foreach ($hasil as $item) {
             $stmt = $this->con->prepare("UPDATE `pemesanan` SET `nomor`= ? WHERE id_pemesanan = ?");
@@ -62,8 +58,13 @@ class Analisa
             if ($stmt->execute()) {
                 $i++;
             }
+
         }
-        return "Perhitungan Telah Berhasil";
+        usort($hasil, function ($a, $b) {
+            if ($a['normalisasi'] == $b['normalisasi']) return 0;
+            return $a['normalisasi'] < $b['normalisasi'] ? 1 : -1;
+        });
+        return "Perhitungan Selesai";
     }
 }
 

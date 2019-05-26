@@ -363,21 +363,6 @@ $app->get('/getPenyakit', function (Request $request, Response $response) {
     $response->write(json_encode($message));
     return $response;
 });
-$app->get('/getBobot', function (Request $request, Response $response) {
-    $request_data = $request->getParsedBody();
-
-    $db = new Penyakit();
-
-    $result = $db->getBobot();
-
-    $message = array();
-    $message['error'] = false;
-    $message['message'] = "Ada Bobot";
-    $message['bobot'] = $result;
-
-    $response->write(json_encode($message));
-    return $response;
-});
 $app->get('/analisa', function (Request $request, Response $response) {
     $request_data = $request->getParsedBody();
 
