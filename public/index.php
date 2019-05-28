@@ -395,6 +395,86 @@ $app->get('/cekNomor', function (Request $request, Response $response) {
     return $response->withHeader('Content-type', 'application/json')
         ->withStatus(200);
 });
+$app->post('/deleteUser', function (Request $request, Response $response) {
+    if (!haveEmptyParameters(array('id_user'), $request, $response)) {
+        $request_data = $request->getParsedBody();
+
+        $id = $request_data['id_user'];
+
+        $db = new Users();
+
+        $result = $db->deleteUser($id);
+
+        if ($result == USER_CREATED) {
+            $message = array();
+            $message['error'] = false;
+            $message['message'] = "Data Berhasil Dihapus";
+
+            $response->write(json_encode($message));
+        } else if (USER_FAILURE) {
+            $message = array();
+            $message['error'] = true;
+            $message['message'] = "Gagal";
+
+            $response->write(json_encode($message));
+        }
+    }
+    return $response;
+});
+$app->post('/updateUser', function (Request $request, Response $response) {
+    if (!haveEmptyParameters(array('nama', 'email', 'password', 'alamat', 'no_telp', 'jenis_kelamin',
+        'tanggal_lahir', 'bpjs', 'id_user'), $request, $response)) {
+        $request_data = $request->getParsedBody();
+
+        $nama = $request_data['nama'];
+        $email = $request_data['email'];
+        $password = $request_data['password'];
+        $alamat = $request_data['alamat'];
+        $no_telp = $request_data['no_telp'];
+        $jenis_kelamin = $request_data['jenis_kelamin'];
+        $tanggal_lahir = $request_data['tanggal_lahir'];
+        $bpjs = $request_data['bpjs'];
+        $id = $request_data['id_user'];
+
+
+        $db = new Users();
+
+        $result = $db->updateUser($nama, $email, $password, $alamat, $no_telp, $jenis_kelamin, $tanggal_lahir, $bpjs, $id);
+
+        if ($result == USER_CREATED) {
+            $message = array();
+            $message['error'] = false;
+            $message['message'] = "User updated successfully";
+
+            $response->write(json_encode($message));
+
+            return $response;
+//                ->withHeader('Content-type', 'application/json')
+//                ->withStatus(201);
+        } else if ($result == USER_FAILURE) {
+            $message = array();
+            $message['error'] = true;
+            $message['message'] = "Some error occurred";
+
+            $response->write(json_encode($message));
+
+            return $response;
+//                ->withHeader('Content-type', 'application/json')
+//                ->withStatus(422);
+        } else if ($result == USER_EXISTS) {
+            $message = array();
+            $message['error'] = true;
+            $message['message'] = "Email already exists";
+
+            $response->write(json_encode($message));
+
+            return $response;
+//                ->withHeader('Content-type', 'application/json')
+//                ->withStatus(422);
+        }
+    }
+    return $response;
+});
 
 function haveEmptyParameters($required_params, $request, $response)
 {
