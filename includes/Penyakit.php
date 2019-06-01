@@ -13,14 +13,13 @@ class Penyakit
 
     public function getPenyakit()
     {
-        $stmt = $this->con->prepare("select id_penyakit,nama_penyakit,keluhan from penyakit");
+        $stmt = $this->con->prepare("select id_penyakit,keluhan from penyakit");
         $stmt->execute();
-        $stmt->bind_result($id_penyakit, $nama_penyakit, $keluhan);
+        $stmt->bind_result($id_penyakit,  $keluhan);
         $penyakit = array();
         while ($stmt->fetch()) {
             $item = array();
             $item['id_penyakit'] = $id_penyakit;
-            $item['nama_penyakit'] = $nama_penyakit;
             $item['keluhan'] = $keluhan;
             array_push($penyakit, $item);
         }

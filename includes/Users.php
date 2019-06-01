@@ -28,7 +28,7 @@ class Users
         return USER_EXISTS;
     }
 
-    public function updateUser($nama, $email, $password, $alamat, $no_telp, $jenis_kelamin, $tanggal_lahir, $bpjs,$id)
+    public function updateUser($nama, $email, $password, $alamat, $no_telp, $jenis_kelamin, $tanggal_lahir, $bpjs, $id)
     {
         $stmt = $this->con->prepare("UPDATE `users` SET `nama`=?,
 `email`=?,`password`=?,`alamat`=?,`no_telp`=?,`jenis_kelamin`=?,`tanggal_lahir`=?,`bpjs`=?
@@ -44,7 +44,7 @@ WHERE id_user = ?");
 
     public function login($email, $password)
     {
-        $stmt = $this->con->prepare("select id_user,nama,email,password,alamat,no_telp,jenis_kelamin,tanggal_lahir,bpjs,level from users where email = ? and password = ?");
+        $stmt = $this->con->prepare("select id_user,nama,email,password,alamat,no_telp,jenis_kelamin,tanggal_lahir,bpjs,level from users where email = ? and password = ? and deleted_at = 0");
         $stmt->bind_param("ss", $email, $password);
         $stmt->execute();
         $stmt->bind_result($id_user, $nama, $email, $password, $alamat, $no_telp, $jenis_kelamin, $tanggal_lahir, $bpjs, $level);

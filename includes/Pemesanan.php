@@ -179,7 +179,7 @@ WHERE tanggal = ?");
     {
         $tanggal = date("Y-m-d");
         $stmt = $this->con->prepare("SELECT `id_pemesanan`, `keluhan`,
- `status`,pemesanan.`created_at` ,users.`nama`,users.`jenis_kelamin`,`nomor` FROM `pemesanan` 
+ `status`,pemesanan.`created_at` ,pemesanan.`nama`,users.`jenis_kelamin`,`nomor` FROM `pemesanan` 
  join users on users.id_user = pemesanan.id_user join penyakit p on p.id_penyakit = pemesanan.id_penyakit
  where pemesanan.tanggal = ? and pemesanan.id_user = ?");
         $stmt->bind_param('si', $tanggal, $id_user);
