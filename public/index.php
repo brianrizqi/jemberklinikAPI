@@ -229,6 +229,23 @@ $app->post('/getPemesananId', function (Request $request, Response $response) {
     }
     return $response;
 });
+$app->post('/riwayat', function (Request $request, Response $response) {
+    if (!haveEmptyParameters(array('id_user'), $request, $response)) {
+        $request_data = $request->getParsedBody();
+
+        $id_user = $request_data['id_user'];
+
+        $db = new Pemesanan();
+
+        $result = $db->riwayat($id_user);
+        $message = array();
+        $message['error'] = false;
+        $message['message'] = "Ada Pemesanan";
+        $message['pemesanan'] = $result;
+        $response->write(json_encode($message));
+    }
+    return $response;
+});
 $app->post('/verifPemesanan', function (Request $request, Response $response) {
     if (!haveEmptyParameters(array('verif', 'id_pemesanan'), $request, $response)) {
         $request_data = $request->getParsedBody();

@@ -132,13 +132,20 @@ WHERE tanggal = ?");
 
     public function createPemesanan($id_user, $id_penyakit, $nama, $umur)
     {
+        $kuota = $this->getKuota();
+        $kuo = 0;
+        if ($kuota['error'] == false) {
+            $kuo = $kuota['id_kuota'];
+        } else {
+            $kuo = 0;
+        }
         $status = "menunggu";
         $tanggal = date("Y-m-d");
-        $nomorr = $this->getNomor();
-        $stmt = $this->con->prepare("INSERT INTO `pemesanan`(`id_user`, `id_penyakit`,`nama`,`umur`, `tanggal`, `status`)
- VALUES (?,?,?,?,?,?)");
-        $stmt->bind_param("ississ",
-            $id_user, $id_penyakit, $nama, $umur, $tanggal, $status);
+//        $nomorr = $this->getNomor();
+        $stmt = $this->con->prepare("INSERT INTO `pemesanan`(`id_user`, `id_penyakit`,`id_kuota`,`nama`,`umur`, `tanggal`, `status`)
+ VALUES (?,?,?,?,?,?,?)");
+        $stmt->bind_param("isisiss",
+            $id_user, $id_penyakit, $kuo, $nama, $umur, $tanggal, $status);
         if ($stmt->execute()) {
             return USER_CREATED;
         } else {
@@ -169,7 +176,7 @@ WHERE tanggal = ?");
             $pemesanan['nomor'] = $nomor;
             array_push($pesan, $pemesanan);
         }
-        usort($pesan, function($a, $b) {
+        usort($pesan, function ($a, $b) {
             return $a['nomor'] <=> $b['nomor'];
         });
         return $pesan;
@@ -199,6 +206,27 @@ WHERE tanggal = ?");
             $pemesanan['error'] = true;
         }
         return $pemesanan;
+    }
+
+    public function riwayat($id_user)
+    {
+        $stmt = $this->con->prepare("SELECT `id_pemesanan`, `keluhan`,pemesanan.`nama`,`tanggal`FROM `pemesanan` 
+ join users on users.id_user = pemesanan.id_user join penyakit p on p.id_penyakit = pemesanan.id_penyakit
+ where pemesanan.id_user = ?");
+        $stmt->bind_param('i', $id_user);
+        $stmt->execute();
+        $stmt->bind_result($id_pemesanan, $keluhan, $nama, $tanggal);
+        $pesan = array();
+        while ($stmt->fetch()) {
+            $pemesanan = array();
+            $pemesanan['id_pemesanan'] = $id_pemesanan;
+            $pemesanan['id_user'] = $id_user;
+            $pemesanan['nama'] = $nama;
+            $pemesanan['keluhan'] = $keluhan;
+            $pemesanan['tanggal'] = $tanggal;
+            array_push($pesan, $pemesanan);
+        }
+        return $pesan;
     }
 
     public function verif($id_pemesanan, $verif)
