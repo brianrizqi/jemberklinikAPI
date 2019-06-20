@@ -17,7 +17,7 @@ $app->get('/', function (Request $request, Response $response) {
 });
 $app->post('/regis', function (Request $request, Response $response) {
     if (!haveEmptyParameters(array('nama', 'email', 'password', 'alamat', 'no_telp', 'jenis_kelamin',
-        'tanggal_lahir', 'bpjs', 'level'), $request, $response)) {
+        'tanggal_lahir', 'level'), $request, $response)) {
         $request_data = $request->getParsedBody();
 
         $nama = $request_data['nama'];
@@ -27,13 +27,12 @@ $app->post('/regis', function (Request $request, Response $response) {
         $no_telp = $request_data['no_telp'];
         $jenis_kelamin = $request_data['jenis_kelamin'];
         $tanggal_lahir = $request_data['tanggal_lahir'];
-        $bpjs = $request_data['bpjs'];
         $level = $request_data['level'];
 
 
-        $db = new Users();
+        $db = new Users;
 
-        $result = $db->createUser($nama, $email, $password, $alamat, $no_telp, $jenis_kelamin, $tanggal_lahir, $bpjs, $level);
+        $result = $db->createUser($nama, $email, $password, $alamat, $no_telp, $jenis_kelamin, $tanggal_lahir, $level);
 
         if ($result == USER_CREATED) {
             $message = array();
@@ -440,7 +439,7 @@ $app->post('/deleteUser', function (Request $request, Response $response) {
 });
 $app->post('/updateUser', function (Request $request, Response $response) {
     if (!haveEmptyParameters(array('nama', 'email', 'password', 'alamat', 'no_telp', 'jenis_kelamin',
-        'tanggal_lahir', 'bpjs', 'id_user'), $request, $response)) {
+        'tanggal_lahir', 'id_user'), $request, $response)) {
         $request_data = $request->getParsedBody();
 
         $nama = $request_data['nama'];
@@ -450,13 +449,12 @@ $app->post('/updateUser', function (Request $request, Response $response) {
         $no_telp = $request_data['no_telp'];
         $jenis_kelamin = $request_data['jenis_kelamin'];
         $tanggal_lahir = $request_data['tanggal_lahir'];
-        $bpjs = $request_data['bpjs'];
         $id = $request_data['id_user'];
 
 
         $db = new Users();
 
-        $result = $db->updateUser($nama, $email, $password, $alamat, $no_telp, $jenis_kelamin, $tanggal_lahir, $bpjs, $id);
+        $result = $db->updateUser($nama, $email, $password, $alamat, $no_telp, $jenis_kelamin, $tanggal_lahir,$id);
 
         if ($result == USER_CREATED) {
             $message = array();

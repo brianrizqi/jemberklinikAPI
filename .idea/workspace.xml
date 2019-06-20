@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1c033471-354a-4ded-8ddb-f12534a7f10d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/Analisa.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Analisa.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/Pemesanan.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Pemesanan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Users.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,40 +22,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1115">
-              <caret line="231" selection-start-line="231" selection-end-line="231" />
+            <state relative-caret-position="-98">
+              <caret line="124" column="74" selection-start-line="124" selection-start-column="70" selection-end-line="124" selection-end-column="74" />
               <folding>
                 <element signature="e#7#63#0#PHP" expanded="true" />
-                <element signature="e#484#2447#1#PHP" />
-                <element signature="e#2471#3313#1#PHP" />
-                <element signature="e#3341#4109#1#PHP" />
-                <element signature="e#5213#5647#1#PHP" />
-                <element signature="e#5677#6121#1#PHP" />
-                <element signature="e#6149#6508#1#PHP" />
-                <element signature="e#6541#7343#1#PHP" />
-                <element signature="e#7369#7891#1#PHP" />
-                <element signature="e#7376#8429#1#PHP" />
-                <element signature="e#8453#9612#1#PHP" />
-                <element signature="e#9640#10639#1#PHP" />
-                <element signature="e#11285#11647#1#PHP" />
-                <element signature="e#11672#11985#1#PHP" />
-                <element signature="e#12011#12506#1#PHP" />
-                <element signature="e#12535#13282#1#PHP" />
-                <element signature="e#13311#15272#1#PHP" />
-                <element signature="n#haveEmptyParameters#0;n#!!top" />
+                <element signature="e#331#460#1#PHP" />
+                <element signature="e#484#2391#1#PHP" />
+                <element signature="e#2415#3257#1#PHP" />
+                <element signature="e#3285#4053#1#PHP" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/Users.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1104">
-              <caret line="46" column="188" selection-start-line="46" selection-start-column="188" selection-end-line="46" selection-end-column="188" />
             </state>
           </provider>
         </entry>
@@ -61,28 +41,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/Analisa.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="70" selection-start-line="70" selection-end-line="70" />
+            <state relative-caret-position="1260">
+              <caret line="59" column="56" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/Users.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2640">
+              <caret line="110" column="52" selection-start-line="110" selection-start-column="52" selection-end-line="110" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/Pemesanan.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="151" column="32" lean-forward="true" selection-start-line="151" selection-start-column="32" selection-end-line="151" selection-end-column="32" />
-              <folding>
-                <element signature="n#getAntrianSelesai#0;n#Pemesanan#0;n#!!top" />
-                <element signature="n#getAntrian#0;n#Pemesanan#0;n#!!top" />
-                <element signature="n#cekNomor#0;n#Pemesanan#0;n#!!top" />
-                <element signature="n#getNomor#0;n#Pemesanan#0;n#!!top" />
-                <element signature="n#kuota#0;n#Pemesanan#0;n#!!top" />
-                <element signature="n#editKuota#0;n#Pemesanan#0;n#!!top" />
-                <element signature="n#verif#0;n#Pemesanan#0;n#!!top" />
-                <element signature="n#cekVerif#0;n#Pemesanan#0;n#!!top" />
-                <element signature="n#isDateExists#0;n#Pemesanan#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="3384">
+              <caret line="141" column="29" lean-forward="true" selection-start-line="141" selection-start-column="29" selection-end-line="141" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -103,6 +81,9 @@
       <find>getnomo</find>
       <find>getnom</find>
       <find>getpeme</find>
+      <find>login</find>
+      <find>getant</find>
+      <find>pemesanan</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -113,10 +94,11 @@
       <list>
         <option value="$PROJECT_DIR$/includes/init.php" />
         <option value="$PROJECT_DIR$/includes/Constant.php" />
-        <option value="$PROJECT_DIR$/includes/Analisa.php" />
-        <option value="$PROJECT_DIR$/includes/Users.php" />
         <option value="$PROJECT_DIR$/includes/Penyakit.php" />
+        <option value="$USER_HOME$/Downloads/DbOperations.php" />
+        <option value="$PROJECT_DIR$/includes/Users.php" />
         <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/includes/Analisa.php" />
         <option value="$PROJECT_DIR$/includes/Pemesanan.php" />
       </list>
     </option>
@@ -161,7 +143,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="775" />
@@ -204,7 +186,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="eu.ydp.idea.ts.spec.generator.settings.spec.template" value="import {$ClassName$} from '$TestsRelativePath$../src/$classRelativePath$/$ClassName$';&#10;&#10;describe('$ClassName$', () =&gt; {&#10;  let $ObjName$:$ClassName$;&#10;&#10;  beforeEach(() =&gt; {&#10;    $ObjName$ = new $ClassName$();&#10;  });&#10;&#10;  describe('', () =&gt; {&#10;    it('', () =&gt; {&#10;      // given&#10;&#10;      // when&#10;&#10;      // then&#10;    });&#10;  });&#10;});&#10;" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sppk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../doni" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -268,18 +250,26 @@
       <workItem from="1558069590464" duration="4603000" />
       <workItem from="1558148232878" duration="3502000" />
       <workItem from="1559368253700" duration="3612000" />
-      <workItem from="1560310986867" duration="7122000" />
+      <workItem from="1560310986867" duration="11758000" />
+      <workItem from="1560429825511" duration="3265000" />
+      <workItem from="1560501735436" duration="500000" />
+      <workItem from="1560503375426" duration="27000" />
+      <workItem from="1560503978104" duration="21000" />
+      <workItem from="1560833387823" duration="2027000" />
+      <workItem from="1560872793487" duration="929000" />
+      <workItem from="1560994816452" duration="706000" />
+      <workItem from="1561001837392" duration="1763000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86051000" />
+    <option name="totallyTimeSpent" value="99925000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20309168" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15245202" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -299,6 +289,27 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20788912" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -320,13 +331,6 @@
     <entry file="file://$PROJECT_DIR$/public/.htaccess">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/Constant.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -334,17 +338,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/Users.php">
+    <entry file="file://$PROJECT_DIR$/includes/init.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1104">
-          <caret line="46" column="188" selection-start-line="46" selection-start-column="188" selection-end-line="46" selection-end-column="188" />
+        <state relative-caret-position="360">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/Analisa.php">
+    <entry file="file://$USER_HOME$/Downloads/DbOperations.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        <state relative-caret-position="432">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/index (1).php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+          <folding>
+            <element signature="e#8#63#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -355,47 +369,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
+    <entry file="file://$PROJECT_DIR$/includes/Pemesanan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1115">
-          <caret line="231" selection-start-line="231" selection-end-line="231" />
-          <folding>
-            <element signature="e#7#63#0#PHP" expanded="true" />
-            <element signature="e#484#2447#1#PHP" />
-            <element signature="e#2471#3313#1#PHP" />
-            <element signature="e#3341#4109#1#PHP" />
-            <element signature="e#5213#5647#1#PHP" />
-            <element signature="e#5677#6121#1#PHP" />
-            <element signature="e#6149#6508#1#PHP" />
-            <element signature="e#6541#7343#1#PHP" />
-            <element signature="e#7369#7891#1#PHP" />
-            <element signature="e#7376#8429#1#PHP" />
-            <element signature="e#8453#9612#1#PHP" />
-            <element signature="e#9640#10639#1#PHP" />
-            <element signature="e#11285#11647#1#PHP" />
-            <element signature="e#11672#11985#1#PHP" />
-            <element signature="e#12011#12506#1#PHP" />
-            <element signature="e#12535#13282#1#PHP" />
-            <element signature="e#13311#15272#1#PHP" />
-            <element signature="n#haveEmptyParameters#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="3384">
+          <caret line="141" column="29" lean-forward="true" selection-start-line="141" selection-start-column="29" selection-end-line="141" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/Pemesanan.php">
+    <entry file="file://$PROJECT_DIR$/includes/Users.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="151" column="32" lean-forward="true" selection-start-line="151" selection-start-column="32" selection-end-line="151" selection-end-column="32" />
+        <state relative-caret-position="2640">
+          <caret line="110" column="52" selection-start-line="110" selection-start-column="52" selection-end-line="110" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/Analisa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="59" column="56" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-98">
+          <caret line="124" column="74" selection-start-line="124" selection-start-column="70" selection-end-line="124" selection-end-column="74" />
           <folding>
-            <element signature="n#getAntrianSelesai#0;n#Pemesanan#0;n#!!top" />
-            <element signature="n#getAntrian#0;n#Pemesanan#0;n#!!top" />
-            <element signature="n#cekNomor#0;n#Pemesanan#0;n#!!top" />
-            <element signature="n#getNomor#0;n#Pemesanan#0;n#!!top" />
-            <element signature="n#kuota#0;n#Pemesanan#0;n#!!top" />
-            <element signature="n#editKuota#0;n#Pemesanan#0;n#!!top" />
-            <element signature="n#verif#0;n#Pemesanan#0;n#!!top" />
-            <element signature="n#cekVerif#0;n#Pemesanan#0;n#!!top" />
-            <element signature="n#isDateExists#0;n#Pemesanan#0;n#!!top" />
+            <element signature="e#7#63#0#PHP" expanded="true" />
+            <element signature="e#331#460#1#PHP" />
+            <element signature="e#484#2391#1#PHP" />
+            <element signature="e#2415#3257#1#PHP" />
+            <element signature="e#3285#4053#1#PHP" />
           </folding>
         </state>
       </provider>

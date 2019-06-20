@@ -14,8 +14,8 @@ class Analisa
     public function hitung()
     {
         $tanggal = date("Y-m-d");
-        $stmt = $this->con->prepare("SELECT `id_pemesanan`, `id_user`, `id_penyakit`,`umur`,`created_at` FROM `pemesanan` 
- where pemesanan.tanggal = '$tanggal'");
+        $stmt = $this->con->prepare("SELECT `id_pemesanan`, `id_user`, `id_penyakit`,`umur`,`created_at` FROM `antrean` 
+ where antrean.tanggal = '$tanggal'");
         $stmt->execute();
         $stmt->bind_result($id_pemesanan, $id_user, $id_penyakit, $umur, $created_at);
         $pesan = array();
@@ -57,7 +57,7 @@ class Analisa
         });
         $i = 1;
         foreach ($hasil as $item) {
-            $stmt = $this->con->prepare("UPDATE `pemesanan` SET `nomor`= ? WHERE id_pemesanan = ?");
+            $stmt = $this->con->prepare("UPDATE `antrean` SET `nomor`= ? WHERE id_pemesanan = ?");
             $stmt->bind_param('ii', $i, $item['id_pemesanan']);
             if ($stmt->execute()) {
                 $i++;

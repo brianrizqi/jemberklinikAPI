@@ -15,7 +15,7 @@ class Pemesanan
     {
         $tanggal = date("Y-m-d");
         $statuss = "selesai";
-        $selesai = $this->con->prepare("SELECT nomor FROM pemesanan where tanggal = ? and status = ? order by nomor desc limit 0,1");
+        $selesai = $this->con->prepare("SELECT nomor FROM antrean where tanggal = ? and status = ? order by nomor desc limit 0,1");
         $selesai->bind_param("ss", $tanggal, $statuss);
         $selesai->execute();
         $selesai->bind_result($nomor);
@@ -32,7 +32,7 @@ class Pemesanan
         $tanggal = date("Y-m-d");
         $status = "masuk";
         $selesai = $this->getAntrianSelesai();
-        $antrian = $this->con->prepare("SELECT nomor FROM pemesanan where tanggal = ? and status = ?");
+        $antrian = $this->con->prepare("SELECT nomor FROM antrean where tanggal = ? and status = ?");
         $antrian->bind_param("ss", $tanggal, $status);
         $antrian->execute();
         $antrian->bind_result($nomor);
@@ -51,7 +51,7 @@ class Pemesanan
     public function cekNomor()
     {
         $tanggal = date("Y-m-d");
-        $no = $this->con->prepare("SELECT DISTINCT `nomor` FROM `pemesanan` WHERE tanggal = ?");
+        $no = $this->con->prepare("SELECT DISTINCT `nomor` FROM `antrean` WHERE tanggal = ?");
         $no->bind_param('s', $tanggal);
         $no->execute();
         $no->bind_result($nomor);
@@ -68,7 +68,7 @@ class Pemesanan
     private function getNomor()
     {
         $tanggal = date("Y-m-d");
-        $pemesanan = $this->con->prepare("SELECT `nomor` FROM `pemesanan` WHERE tanggal = ? ORDER BY 
+        $pemesanan = $this->con->prepare("SELECT `nomor` FROM `antrean` WHERE tanggal = ? ORDER BY 
 created_at DESC LIMIT 0,1");
         $pemesanan->bind_param("s", $tanggal);
         $pemesanan->execute();
@@ -141,25 +141,54 @@ WHERE tanggal = ?");
         }
         $status = "menunggu";
         $tanggal = date("Y-m-d");
-//        $nomorr = $this->getNomor();
-        $stmt = $this->con->prepare("INSERT INTO `pemesanan`(`id_user`, `id_penyakit`,`id_kuota`,`nama`,`umur`, `tanggal`, `status`)
- VALUES (?,?,?,?,?,?,?)");
-        $stmt->bind_param("isisiss",
-            $id_user, $id_penyakit, $kuo, $nama, $umur, $tanggal, $status);
-        if ($stmt->execute()) {
-            return USER_CREATED;
-        } else {
+        $jumlahKuota = $this->getJumlahKuota();
+        $jumlahPesan = $this->getJumlahPesan();
+        if ($jumlahPesan >= $jumlahKuota) {
             return USER_FAILURE;
+        } else {
+            $stmt = $this->con->prepare("INSERT INTO `antrean`(`id_user`, `id_penyakit`,`id_kuota`,`nama`,`umur`, `tanggal`, `status`)
+ VALUES (?,?,?,?,?,?,?)");
+            $stmt->bind_param("isisiss",
+                $id_user, $id_penyakit, $kuo, $nama, $umur, $tanggal, $status);
+            if ($stmt->execute()) {
+                return USER_CREATED;
+            } else {
+                return USER_FAILURE;
+            }
         }
+    }
+
+    private function getJumlahKuota()
+    {
+        $tanggal = date("Y-m-d");
+        $stmt = $this->con->prepare("SELECT kuota FROM `kuota` 
+WHERE tanggal = ?");
+        $stmt->bind_param("s", $tanggal);
+        $stmt->execute();
+        $stmt->bind_result($kuota);
+        $stmt->fetch();
+        return $kuota;
+    }
+
+    private function getJumlahPesan()
+    {
+        $tanggal = date("Y-m-d");
+        $stmt = $this->con->prepare("SELECT COUNT(*) as jumlah FROM `antrean` 
+WHERE tanggal = ?");
+        $stmt->bind_param("s", $tanggal);
+        $stmt->execute();
+        $stmt->bind_result($jumlah);
+        $stmt->fetch();
+        return $jumlah;
     }
 
     public function getPemesanan()
     {
         $tanggal = date("Y-m-d");
-        $stmt = $this->con->prepare("SELECT `id_pemesanan`, pemesanan.`id_user`, `keluhan`,
- `status`,pemesanan.`created_at` ,pemesanan.`nama`,users.`jenis_kelamin`,pemesanan.`nomor` FROM `pemesanan` 
- join users on users.id_user = pemesanan.id_user join penyakit p on pemesanan.id_penyakit = p.id_penyakit
- where pemesanan.tanggal = '$tanggal'");
+        $stmt = $this->con->prepare("SELECT `id_pemesanan`, antrean.`id_user`, `keluhan`,
+ `status`,antrean.`created_at` ,antrean.`nama`,users.`jenis_kelamin`,antrean.`nomor` FROM `antrean` 
+ join users on users.id_user = antrean.id_user join penyakit p on antrean.id_penyakit = p.id_penyakit
+ where antrean.tanggal = '$tanggal'");
         $stmt->execute();
         $stmt->bind_result($id_pemesanan, $id_user, $keluhan, $status, $created_at,
             $nama, $jenis_kelamin, $nomor);
@@ -186,9 +215,9 @@ WHERE tanggal = ?");
     {
         $tanggal = date("Y-m-d");
         $stmt = $this->con->prepare("SELECT `id_pemesanan`, `keluhan`,
- `status`,pemesanan.`created_at` ,pemesanan.`nama`,users.`jenis_kelamin`,`nomor` FROM `pemesanan` 
- join users on users.id_user = pemesanan.id_user join penyakit p on p.id_penyakit = pemesanan.id_penyakit
- where pemesanan.tanggal = ? and pemesanan.id_user = ?");
+ `status`,antrean.`created_at` ,antrean.`nama`,users.`jenis_kelamin`,`nomor` FROM `antrean` 
+ join users on users.id_user = antrean.id_user join penyakit p on p.id_penyakit = antrean.id_penyakit
+ where antrean.tanggal = ? and antrean.id_user = ?");
         $stmt->bind_param('si', $tanggal, $id_user);
         $stmt->execute();
         $stmt->bind_result($id_pemesanan, $keluhan, $status, $created_at, $nama, $jenis_kelamin, $nomor);
@@ -210,9 +239,9 @@ WHERE tanggal = ?");
 
     public function riwayat($id_user)
     {
-        $stmt = $this->con->prepare("SELECT `id_pemesanan`, `keluhan`,pemesanan.`nama`,`tanggal`FROM `pemesanan` 
- join users on users.id_user = pemesanan.id_user join penyakit p on p.id_penyakit = pemesanan.id_penyakit
- where pemesanan.id_user = ?");
+        $stmt = $this->con->prepare("SELECT `id_pemesanan`, `keluhan`,antrean.`nama`,`tanggal`FROM `antrean` 
+ join users on users.id_user = antrean.id_user join penyakit p on p.id_penyakit = antrean.id_penyakit
+ where antrean.id_user = ?");
         $stmt->bind_param('i', $id_user);
         $stmt->execute();
         $stmt->bind_result($id_pemesanan, $keluhan, $nama, $tanggal);
@@ -233,7 +262,7 @@ WHERE tanggal = ?");
     {
         $cek = $this->cekVerif();
         if ($cek == true) {
-            $stmt = $this->con->prepare("UPDATE `pemesanan` SET `status`= ? WHERE id_pemesanan = ?");
+            $stmt = $this->con->prepare("UPDATE `antrean` SET `status`= ? WHERE id_pemesanan = ?");
             $stmt->bind_param('si', $verif, $id_pemesanan);
             if ($stmt->execute()) {
                 return USER_CREATED;
@@ -242,7 +271,7 @@ WHERE tanggal = ?");
             }
         } else {
             if ($verif == "selesai") {
-                $stmt = $this->con->prepare("UPDATE `pemesanan` SET `status`= ? WHERE id_pemesanan = ?");
+                $stmt = $this->con->prepare("UPDATE `antrean` SET `status`= ? WHERE id_pemesanan = ?");
                 $stmt->bind_param('si', $verif, $id_pemesanan);
                 if ($stmt->execute()) {
                     return USER_CREATED;
@@ -259,7 +288,7 @@ WHERE tanggal = ?");
     {
         $tanggal = date("Y-m-d");
         $status = "masuk";
-        $stmt = $this->con->prepare("SELECT id_pemesanan FROM pemesanan where tanggal = ? and status = ?");
+        $stmt = $this->con->prepare("SELECT id_pemesanan FROM antrean where tanggal = ? and status = ?");
         $stmt->bind_param('ss', $tanggal, $status);
         $stmt->execute();
         $stmt->bind_result($id_pemesanan);
