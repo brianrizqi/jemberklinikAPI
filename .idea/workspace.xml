@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c033471-354a-4ded-8ddb-f12534a7f10d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Analisa.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Analisa.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/Pemesanan.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Pemesanan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Users.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,17 +19,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-98">
-              <caret line="124" column="74" selection-start-line="124" selection-start-column="70" selection-end-line="124" selection-end-column="74" />
+            <state relative-caret-position="300">
+              <caret line="395" column="4" lean-forward="true" selection-start-line="395" selection-start-column="4" selection-end-line="397" selection-end-column="28" />
               <folding>
                 <element signature="e#7#63#0#PHP" expanded="true" />
                 <element signature="e#331#460#1#PHP" />
                 <element signature="e#484#2391#1#PHP" />
                 <element signature="e#2415#3257#1#PHP" />
                 <element signature="e#3285#4053#1#PHP" />
+                <element signature="e#4081#5128#1#PHP" />
+                <element signature="e#5157#5591#1#PHP" />
+                <element signature="e#5621#6065#1#PHP" />
+                <element signature="e#6485#7287#1#PHP" />
+                <element signature="e#7313#7835#1#PHP" />
+                <element signature="e#7868#8921#1#PHP" />
+                <element signature="e#8945#10104#1#PHP" />
+                <element signature="e#10132#11131#1#PHP" />
+                <element signature="e#11157#11748#1#PHP" />
+                <element signature="e#11777#12139#1#PHP" />
+                <element signature="e#12503#12998#1#PHP" />
+                <element signature="e#13027#13774#1#PHP" />
+                <element signature="e#13803#15709#1#PHP" />
+                <element signature="n#haveEmptyParameters#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -41,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/Analisa.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1260">
-              <caret line="59" column="56" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
+            <state relative-caret-position="310">
+              <caret line="66" column="5" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="66" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -50,17 +61,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/Users.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2640">
-              <caret line="110" column="52" selection-start-line="110" selection-start-column="52" selection-end-line="110" selection-end-column="52" />
+            <state relative-caret-position="216">
+              <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/Pemesanan.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3384">
-              <caret line="141" column="29" lean-forward="true" selection-start-line="141" selection-start-column="29" selection-end-line="141" selection-end-column="29" />
+            <state relative-caret-position="276">
+              <caret line="174" column="17" lean-forward="true" selection-start-line="174" selection-start-column="17" selection-end-line="174" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -96,9 +107,9 @@
         <option value="$PROJECT_DIR$/includes/Constant.php" />
         <option value="$PROJECT_DIR$/includes/Penyakit.php" />
         <option value="$USER_HOME$/Downloads/DbOperations.php" />
-        <option value="$PROJECT_DIR$/includes/Users.php" />
-        <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/includes/Analisa.php" />
+        <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/includes/Users.php" />
         <option value="$PROJECT_DIR$/includes/Pemesanan.php" />
       </list>
     </option>
@@ -258,18 +269,18 @@
       <workItem from="1560833387823" duration="2027000" />
       <workItem from="1560872793487" duration="929000" />
       <workItem from="1560994816452" duration="706000" />
-      <workItem from="1561001837392" duration="1763000" />
+      <workItem from="1561001837392" duration="12783000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99925000" />
+    <option name="totallyTimeSpent" value="110945000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15245202" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21633889" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -369,38 +380,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/Pemesanan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3384">
-          <caret line="141" column="29" lean-forward="true" selection-start-line="141" selection-start-column="29" selection-end-line="141" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/Users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2640">
-          <caret line="110" column="52" selection-start-line="110" selection-start-column="52" selection-end-line="110" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/Analisa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="59" column="56" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-98">
-          <caret line="124" column="74" selection-start-line="124" selection-start-column="70" selection-end-line="124" selection-end-column="74" />
+        <state relative-caret-position="300">
+          <caret line="395" column="4" lean-forward="true" selection-start-line="395" selection-start-column="4" selection-end-line="397" selection-end-column="28" />
           <folding>
             <element signature="e#7#63#0#PHP" expanded="true" />
             <element signature="e#331#460#1#PHP" />
             <element signature="e#484#2391#1#PHP" />
             <element signature="e#2415#3257#1#PHP" />
             <element signature="e#3285#4053#1#PHP" />
+            <element signature="e#4081#5128#1#PHP" />
+            <element signature="e#5157#5591#1#PHP" />
+            <element signature="e#5621#6065#1#PHP" />
+            <element signature="e#6485#7287#1#PHP" />
+            <element signature="e#7313#7835#1#PHP" />
+            <element signature="e#7868#8921#1#PHP" />
+            <element signature="e#8945#10104#1#PHP" />
+            <element signature="e#10132#11131#1#PHP" />
+            <element signature="e#11157#11748#1#PHP" />
+            <element signature="e#11777#12139#1#PHP" />
+            <element signature="e#12503#12998#1#PHP" />
+            <element signature="e#13027#13774#1#PHP" />
+            <element signature="e#13803#15709#1#PHP" />
+            <element signature="n#haveEmptyParameters#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/Users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/Analisa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="66" column="5" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="66" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/Pemesanan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="174" column="17" lean-forward="true" selection-start-line="174" selection-start-column="17" selection-end-line="174" selection-end-column="17" />
         </state>
       </provider>
     </entry>

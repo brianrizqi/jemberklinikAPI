@@ -228,6 +228,17 @@ $app->post('/getPemesananId', function (Request $request, Response $response) {
     }
     return $response;
 });
+$app->get('/getAntrianId', function (Request $request, Response $response) {
+    $db = new Pemesanan();
+
+    $result = $db->getAntrianId();
+
+    $message = array();
+    $message['error'] = false;
+    $message['nomor'] = $result;
+
+    $response->write(json_encode($message));
+});
 $app->post('/riwayat', function (Request $request, Response $response) {
     if (!haveEmptyParameters(array('id_user'), $request, $response)) {
         $request_data = $request->getParsedBody();
@@ -454,7 +465,7 @@ $app->post('/updateUser', function (Request $request, Response $response) {
 
         $db = new Users();
 
-        $result = $db->updateUser($nama, $email, $password, $alamat, $no_telp, $jenis_kelamin, $tanggal_lahir,$id);
+        $result = $db->updateUser($nama, $email, $password, $alamat, $no_telp, $jenis_kelamin, $tanggal_lahir, $id);
 
         if ($result == USER_CREATED) {
             $message = array();
