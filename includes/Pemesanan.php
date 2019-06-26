@@ -27,6 +27,17 @@ class Pemesanan
         return $nomorr;
     }
 
+    public function checkKuota()
+    {
+        $kuota = $this->getJumlahKuota();
+        $pesan = $this->getJumlahPesan();
+        if ($pesan >= $kuota) {
+            return USER_FAILURE;
+        } else {
+            return USER_CREATED;
+        }
+    }
+
     public function getAntrian()
     {
         $tanggal = date("Y-m-d");
@@ -60,12 +71,31 @@ class Pemesanan
         return $nomor;
     }
 
-    public function getAntrianId()
+    public function getAntrianId($id_user)
     {
-        $jumlahKuota = $this->getJumlahKuota();
-        $antrianSelesai = $this->getAntriann();
-        $hasil = $jumlahKuota - $antrianSelesai;
-        return $hasil;
+        $nomorr = $this->getNomor($id_user);
+        $nol = 0;
+        $tanggal = date("Y-m-d");
+        $no = $this->con->prepare("SELECT `nomor` FROM `antrean` WHERE nomor = ? and tanggal = ?");
+        $no->bind_param('is', $nol, $tanggal);
+        $no->execute();
+        $no->bind_result($nomor);
+        if ($no->fetch()> 0) {
+            $hasil = 0;
+            return $hasil;
+        } else {
+            $hasil = 0;
+            $no = $nomorr - 1;
+            $stmt = $this->con->prepare("SELECT nomor FROM `antrean` ORDER BY `nomor` limit 0,?");
+            $stmt->bind_param('i', $no);
+            $stmt->execute();
+            $stmt->bind_result($nomor);
+            while ($stmt->fetch()) {
+                $hasil++;
+            }
+            return $hasil;
+        }
+
     }
 
     public function cekNomor()
@@ -85,33 +115,34 @@ class Pemesanan
         return $item;
     }
 
-    private function getNomor()
+    private function getNomor($id_user)
     {
         $tanggal = date("Y-m-d");
-        $pemesanan = $this->con->prepare("SELECT `nomor` FROM `antrean` WHERE tanggal = ? ORDER BY 
-created_at DESC LIMIT 0,1");
-        $pemesanan->bind_param("s", $tanggal);
+        $pemesanan = $this->con->prepare("SELECT `nomor` FROM `antrean` WHERE tanggal = ? and id_user = ?");
+        $pemesanan->bind_param("si", $tanggal, $id_user);
         $pemesanan->execute();
         $pemesanan->bind_result($nomor);
-        if ($pemesanan->fetch() > 0) {
-            $nomorr = $nomor + 1;
-        } else {
-            $nomorr = 1;
-        }
-        return $nomorr;
+        $pemesanan->fetch();
+        return $nomor;
     }
 
     public function kuota($kuota, $jam_awal, $jam_akhir)
     {
         $tanggal = date("Y-m-d");
-        if (!$this->isDateExists($tanggal)) {
-            $stmt = $this->con->prepare("INSERT INTO `kuota`(`kuota`,`tanggal`,`jam_awal`,`jam_akhir`)
+        $date = strtotime(date('Y-m-d'));
+        $date = date('l', $date);
+        if ($date == "Sunday") {
+            return USER_FAILURE;
+        } else {
+            if (!$this->isDateExists($tanggal)) {
+                $stmt = $this->con->prepare("INSERT INTO `kuota`(`kuota`,`tanggal`,`jam_awal`,`jam_akhir`)
 VALUES (?,?,?,?)");
-            $stmt->bind_param("isss", $kuota, $tanggal, $jam_awal, $jam_akhir);
-            if ($stmt->execute()) {
-                return USER_CREATED;
-            } else {
-                return USER_FAILURE;
+                $stmt->bind_param("isss", $kuota, $tanggal, $jam_awal, $jam_akhir);
+                if ($stmt->execute()) {
+                    return USER_CREATED;
+                } else {
+                    return USER_FAILURE;
+                }
             }
         }
         return USER_EXISTS;

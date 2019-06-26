@@ -95,6 +95,27 @@ $app->post('/login', function (Request $request, Response $response) {
     }
     return $response;
 });
+$app->get('/checkKuota', function (Request $request, Response $response) {
+    $db = new Pemesanan();
+
+    $result = $db->checkKuota();
+
+    if ($result == USER_CREATED) {
+        $message['error'] = false;
+        $message['message'] = "Pesanan Kosong";
+
+        $response->write(json_encode($message));
+
+        return $response;
+    } else if ($result == USER_FAILURE) {
+        $message['error'] = true;
+        $message['message'] = "Pesanan Penuh";
+
+        $response->write(json_encode($message));
+
+        return $response;
+    }
+});
 $app->post('/getUserId', function (Request $request, Response $response) {
     if (!haveEmptyParameters(array('id_user'), $request, $response)) {
         $request_data = $request->getParsedBody();
@@ -228,10 +249,12 @@ $app->post('/getPemesananId', function (Request $request, Response $response) {
     }
     return $response;
 });
-$app->get('/getAntrianId', function (Request $request, Response $response) {
+$app->post('/getAntrianId', function (Request $request, Response $response) {
+    $request_data = $request->getParsedBody();
+    $id_user = $request_data['id_user'];
     $db = new Pemesanan();
 
-    $result = $db->getAntrianId();
+    $result = $db->getAntrianId($id_user);
 
     $message = array();
     $message['error'] = false;
