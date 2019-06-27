@@ -80,19 +80,19 @@ class Pemesanan
         $no->bind_param('is', $nol, $tanggal);
         $no->execute();
         $no->bind_result($nomor);
-        if ($no->fetch()> 0) {
+        if ($no->fetch() > 0) {
             $hasil = 0;
             return $hasil;
         } else {
+            $status = "menunggu";
             $hasil = 0;
             $no = $nomorr - 1;
-            $stmt = $this->con->prepare("SELECT nomor FROM `antrean` ORDER BY `nomor` limit 0,?");
-            $stmt->bind_param('i', $no);
+            $stmt = $this->con->prepare("SELECT nomor FROM `antrean` WHERE status = ? and nomor < ? ORDER BY `nomor` limit ?,?");
+            $stmt->bind_param('siii', $status,$nomorr, $hasil, $no);
             $stmt->execute();
             $stmt->bind_result($nomor);
-            while ($stmt->fetch()) {
+            while ($stmt->fetch())
                 $hasil++;
-            }
             return $hasil;
         }
 
